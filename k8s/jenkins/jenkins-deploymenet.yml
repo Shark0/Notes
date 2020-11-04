@@ -36,7 +36,7 @@ spec:
     requests:
       storage: 4Gi
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins

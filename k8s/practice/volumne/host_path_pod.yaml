@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: host-path-example
+spec:
+  containers:
+    - name: host-path-example
+      image: nginx
+      volumeMounts:
+        - mountPath: /tmp/conf
+          name: host-path-volume
+  volumes:
+    - name: host-path-volume
+      hostPath:
+        path: /tmp/hostpathdata

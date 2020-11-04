@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-pod
+spec:
+  containers:
+    - name: config-pod
+      image: busybox
+      command: ["/bin/sh", "-c", "env"]
+      env:
+        - name: CONFIG_EXAMPLE
+          valueFrom:
+            configMapKeyRef:
+              name: config-example
+              key: k1
+  restartPolicy: Never
