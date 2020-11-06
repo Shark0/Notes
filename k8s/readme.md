@@ -1,19 +1,27 @@
+# minikube
+```
+$ minikube start
+$ minikube start --cpus 4 --memory 4096
+$ minikube stop
+$ minikube dashboard
+$ minikube delete
+$ minikube ip
+$ minikube ssh
+$ minikube config set memory 4096
+$ minikube config set cpus 2
+```
 # context
 ```
 $ kubectl config get-contexts
 $ kubectl config current-context
 $ kubectl config use-context minikube
 $ kubectl cluster-info
+```
+# node
+```
+$ kubectl get nodes
+```
 
-```
-# minikube
-```
-$ minikube start
-$ minikube dashboard
-$ minikube delete
-$ minikube ip
-$ minikube ssh
-```
 # pod
 ```
 $ kunectl apply -f pod.yaml

@@ -1,6 +1,7 @@
 #docker
 ## image
 ```
+docker search ${image}
 docker pull ${image}
 docker pull ${image}:${version}
 docker rmi ${image}
