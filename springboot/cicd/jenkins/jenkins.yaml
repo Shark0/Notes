@@ -1,13 +1,21 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  namespace: kube-ops
   name: jenkins
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
+  namespace: kube-ops
   name: jenkins
 rules:
+  - apiGroups: ["extensions", "apps"]
+    resources: ["deployments"]
+    verbs: ["create", "delete", "get", "list", "watch", "patch", "update"]
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["create", "delete", "get", "list", "watch", "patch", "update"]
   - apiGroups: [""]
     resources: ["pods"]
     verbs: ["create","delete","get","list","patch","update","watch"]
@@ -24,6 +32,7 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
+  namespace: kube-ops
   name: jenkins
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -36,21 +45,26 @@ subjects:
 apiVersion: v1
 kind: Service
 metadata:
-  name: jenkins-svc
+  namespace: kube-ops
+  name: jenkins
 spec:
   selector:
     app: jenkins
   type: NodePort
   ports:
-    - protocol: TCP
+    - name: web
       port: 8080
+      targetPort: web
+    - name: agent
+      port: 50000
+      targetPort: agent
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: jenkins-pv
+  namespace: kube-ops
+  name: jenkins
 spec:
-  storageClassName: jenkins
   capacity:
     storage: 4Gi
   accessModes:
@@ -61,9 +75,9 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: jenkins-pvc
+  namespace: kube-ops
+  name: jenkins
 spec:
-  storageClassName: jenkins
   accessModes:
     - ReadWriteOnce
   resources:
@@ -73,7 +87,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-deploy
+  namespace: kube-ops
+  name: jenkins
 spec:
   selector:
     matchLabels:
@@ -90,15 +105,19 @@ spec:
         runAsUser: 0
       serviceAccountName: jenkins
       containers:
-        - name: jenkins
-          image: jenkins/jenkins:lts
-          ports:
-            - containerPort: 8080
-              name: jenkins
-          volumeMounts:
-            - name: jenkins
-              mountPath: /var/jenkins_home
+      - name: jenkins
+        image: jenkins/jenkins:lts
+        ports:
+          - containerPort: 8080
+            name: web
+            protocol: TCP
+          - containerPort: 50000
+            name: agent
+            protocol: TCP
+        volumeMounts:
+          - name: jenkins
+            mountPath: /var/jenkins_home
       volumes:
         - name: jenkins
           persistentVolumeClaim:
-            claimName: jenkins-pvc
+            claimName: jenkins
