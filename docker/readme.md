@@ -21,7 +21,10 @@ $ docker build -t ${image} . --no-cache
 ```
 $ docker create ${image}
 $ docker create ${image}:${version}
-$ docker start -n ${container-name} -p {port}:{container-port} ${image}
+$ docker start -n ${container_name} -p {port}:{container_port} ${image}
 $ docker run --rm ${image}:${version}
-$ pwdocker run -d -v ${mount-destination}:${container-mount-destination} -n ${container-name} -p {port}:{container-port} ${image}:${version}
+$ docker run -d -v ${mount_destination}:${container_mount_destination} -n ${container_name} -p {port}:{container_port} ${image}:${version}
+$ docker attach ${container_name}
+$ docker cp ${file_path} ${container_name}:${container_file_path}
+$ docker cp ${container_name}:${container_file_path} ${file_path} 
 ```
