@@ -1,7 +1,7 @@
 #鳥哥的shell script教學練習
 * 參考網址：http://linux.vbird.org/linux_basic/0340bashshell-scripts.php
 * 我有rename一些參數，讓可讀性高一點
-* 好用的code review 或 debug技巧
+* 好用的code review 或 debug技巧，來源至鳥哥
 ```
 [dmtsai@study ~]$ sh [-nvx] scripts.sh
 選項與參數：

@@ -87,9 +87,9 @@ kubectl get pods
 
 ### 建置docker hub Crendentials
 * 點擊"管理Jenkins"
-* 點擊"Manage Crendentials"
+* 點擊"Manage Credentials"
 * 點擊"Jenkins"
-* 點擊"Global crendentials (unrestricted)"
+* 點擊"Global Credentials (unrestricted)"
 * 點擊"Add Credentials"
 * Kind選擇"Username with password"
 * Username輸入你的Docker Hub User
