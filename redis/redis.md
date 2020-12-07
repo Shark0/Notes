@@ -1,17 +1,21 @@
 # Redis
 ## Find Keys
 * install redis-cli
-* command
+* input command
 ```
 $ redis-cli -h ${host} -p {port}
 $ keys *  
 ```
-# Dump Data
-reference: https://programmer.ink/think/several-ways-to-export-and-import-redis-data.html
-* install redis dump
-* command 
+## Dump Data
+* 安裝複製工具
 ```
-$ redis-dump -u {host1}:${port} > data.json
-# redis-dump -u :{password}@{host1}:${port} > data.json
-$ < redis_data.json redis-load -u ${host2}:{port}
+npm install redis-utils-cli -g
+```
+* 刪除自己電腦的Redis
+```
+redis-utils del 127.0.0.1:6050 *
+```
+* 複製
+```
+redis-utils copy ${source_host}:${source_port}/0 ${source_host}:${source_port}/0 -p *
 ```

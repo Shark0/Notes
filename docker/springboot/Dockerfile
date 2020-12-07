@@ -1,4 +1,11 @@
-FROM java
-MAINTAINER Shark
-ADD application/target/app.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+FROM centos/systemd
+
+USER root
+
+SHELL ["/bin/bash", "-c"] 
+
+USER root
+WORKDIR /home/root
+	
+RUN yum update -y \
+R
