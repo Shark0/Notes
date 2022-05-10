@@ -33,6 +33,29 @@ awk '/2022-02-28 16:/,/2022-02-28 16:/' '5 error.log'
 
 ## SRE[斗星轉移](https://www.newton.com.tw/wiki/%E6%96%97%E8%BD%89%E6%98%9F%E7%A7%BB)
 自動回報Log建置，若有非預期Error Log產生，立即自動打到聊天室通知後端修Bug
-* 申請Telegram Bot
-* 安裝Filebeat，擷取error.log傳到LogStash
-* 安裝LogStash，並設定http output，透過telegram api把error log打到telegram room
+### Telegram Bot
+* [申請Telegram Bot，測試訊息發送](https://ithelp.ithome.com.tw/m/articles/10262881)
+* [Telegram Post方式發送訊息](https://ithelp.ithome.com.tw/articles/10247561)
+
+### Filebeat 
+* [安裝Filebeat](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation-configuration.html)
+* 將[filebeat.yaml](filebeat/filebeat.yml)複製到filebeat資料夾，定義個服務error.log的標籤，並傳到LogStash
+* 手動啟動filebeat
+```
+.\filebeat.exe -e -c filebeat.yml
+```
+
+### LogStash
+* [安裝LogStash](https://www.elastic.co/guide/en/logstash/current/running-logstash-windows.html)
+* 將[pipelines.yaml](./logstash/pipelines.yml)複製到Logstash的config資料夾，指定用api.conf處理事件串流
+* 修改config/logstash.yml配置，設定api.http.host: 127.0.0.1 跟 api.http.port: 9600
+* 將api.conf複製到config資料夾，根據各事件串流的標籤呼叫telegram bot傳送訊息到聊天群
+* 手動啟動LogStash
+```
+.\bin\logstash.bat
+```
+
+
+
+
+
