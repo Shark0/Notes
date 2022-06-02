@@ -75,13 +75,13 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html
 ```
 vi /etc/elasticsearch/elasticsearch.yml
 ```
-[content](./elasticsearch/elasticsearch.yml)
+[content](elasticsearch/elasticsearch.yml)
 
 #### edit elasticsearch jvm config 
 ```
 vi /etc/elasticsearch/jvm.options
 ```  
-[content](./elasticsearch/jvm.options)
+[content](elasticsearch/jvm.options)
 
 #### start elasticsearch
 ```
@@ -99,7 +99,7 @@ https://www.elastic.co/guide/en/kibana/current/rpm.html
 ```
 vi /etc/kibana/kibana.yml
 ```
-[content](./kibana/kibana.yml)
+[content](kibana/kibana.yml)
 
 #### start kibana
 ```
@@ -117,26 +117,26 @@ https://www.elastic.co/guide/en/logstash/current/installing-logstash.html
 ```
 vi /etc/logstash/logstash.yml
 ```
-[content](./logstash/logstash.yml)
+[content](logstash/logstash.yml)
 
 #### edit logstash pipeline 
 ```
 vi /etc/logstash/pipelines.yml
 ```  
-[content](./logstash/pipelines.yml)
+[content](logstash/pipelines.yml)
 
 #### edit pipeline config
 filebeat會將不同的log來源標記不同的tag，logstash根據不同的tag做出不同的filter，將log產生時間以及發生的class.method抓出來產生新的filed，並根據寫進不同的index，方便kibana設定不同的index pattern，並將不同的index pattern做出不同的報表 
 ```
 vi /etc/logstash/conf.d/api.config
 ```
-[content](./logstash/conf.d/api.conf)
+[content](logstash/conf.d/api.conf)
 
 #### edit logstash jvm config
 ```
 vi /etc/logstash/jvm.options
 ```  
-[content](./logstash/jvm.options)
+[content](logstash/jvm.options)
 
 #### start logstash
 ```
