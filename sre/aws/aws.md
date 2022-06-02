@@ -1,7 +1,7 @@
 # AWS
 觀看這篇筆及可以搭配[大話AWS雲端架構](https://www.tenlong.com.tw/products/9789864348022?list_name=srh)
 ，該書是講解概念，而這篇筆記則是在Youtube找出相關實作教學影片，極度建議把書看完一遍再看教學影片，
-如果不看書的話也可以看此[Youtube]()來理解AWS提供的各服務在應用情境裡扮演的腳色。
+如果不看書的話也可以看此[Youtube](https://www.youtube.com/watch?v=Z3SYDTMP3ME&t=3s) 來理解AWS提供的各服務在應用情境裡扮演的腳色。
 
 下面Youtube實作教學的排序是按照個人經驗中服務的重要度以及常用程度來排序。
 
