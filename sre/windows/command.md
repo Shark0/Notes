@@ -13,6 +13,20 @@ taskkill /f /im {pid}
 * https://docs.microsoft.com/zh-tw/windows-server/networking/technologies/netsh/netsh-contexts
 #### Open Firewall
 ```
-netsh advfirewall firewall add rule name="Rule Name" protocol=TCP dir=in localport=10050 action=allow
-netsh advfirewall firewall add rule name="Rule Name" protocol=UDP dir=in localport=10050 action=allow
+netsh advfirewall firewall add rule name="${role_name}" protocol=TCP dir=in localport=${port} action=allow
+netsh advfirewall firewall add rule name="${role_name}" protocol=UDP dir=in localport=${port} action=allow
+```
+
+## Service
+* create service
+```
+SC CREATE Redis_Customer obj= "NT AUTHORITY\NetworkService" start= auto DisplayName= "${service_name}" binPath= "${service_exe_path}"
+```
+* stop service
+```
+SC STOP ${service_name}
+```
+* delete service
+```
+SC DELETE ${service_name}
 ```
