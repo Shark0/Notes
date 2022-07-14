@@ -11,6 +11,6 @@ spec:
         - name: CONFIG_EXAMPLE
           valueFrom:
             configMapKeyRef:
-              name: config-example
+              name: config
               key: k1
   restartPolicy: Never

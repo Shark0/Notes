@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-example
+  name: config
 data:
   k1: v1
   k2: v2

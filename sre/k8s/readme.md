@@ -24,29 +24,29 @@ $ kubectl get nodes
 
 # pod
 ```
-$ kunectl apply -f pod.yaml
-$ kunectl create -f pod.yaml
-$ kunectl delete -f deploy.yaml
-$ kubectl get po
-$ kubectl get po --show-labels
-$ kubectl describe po ${pod}
+$ kubectl apply -f pod.yaml
+$ kubectl create -f pod.yaml
+$ kubectl delete -f deploy.yaml
+$ kubectl get pod
+$ kubectl get pod --show-labels
+$ kubectl describe pod ${pod}
 $ kubectl logs ${pod}
-$ kubectl delete po ${pod}
+$ kubectl delete pod ${pod}
 $ kubectl -n ${namespace} exec -it ${pod} -- /bin/bash
 ```
 # deploy
 ```
-$ kunectl apply -f deploy.yaml
-$ kunectl create -f deploy.yaml
-$ kunectl delete -f deploy.yaml
+$ kubectl apply -f deploy.yaml
+$ kubectl create -f deploy.yaml
+$ kubectl delete -f deploy.yaml
 $ kubectl get deploy
 $ kubectl describe deploy ${deploy}
 $ kubectl delete deploy ${deploy}
 ```
 # service
 ```
-$ kunectl apply -f svc.yaml
-$ kunectl create -f svc.yaml
+$ kubectl apply -f svc.yaml
+$ kubectl create -f svc.yaml
 $ kubectl get svc
 $ kubectl describe svc ${service}
 $ kubectl delete svc ${service}
@@ -65,32 +65,32 @@ $ kubectl get pods -n ${namespace}
 ```
 # persistentvolumes
 ```
-$ kunectl apply -f pv.yaml
-$ kunectl create -f pv.yaml
-$ kunectl delete -f pv.yaml
+$ kubectl apply -f pv.yaml
+$ kubectl create -f pv.yaml
+$ kubectl delete -f pv.yaml
 $ kubectl get persistentvolumes
 $ kubectl describe persistentvolumes ${pv}
 $ kubectl delete persistentvolumes ${pv}
 ```
 # persistentvolumeclaims
 ```
-$ kunectl apply -f pvc.yaml
-$ kunectl create -f pvc.yaml
-$ kunectl delete -f pvc.yaml
+$ kubectl apply -f pvc.yaml
+$ kubectl create -f pvc.yaml
+$ kubectl delete -f pvc.yaml
 $ kubectl get persistentvolumeclaims
 $ kubectl describe persistentvolumeclaims ${pcv}
 $ kubectl delete persistentvolumeclaims ${pvc}
 ```
 # config
 ```
-$ kunectl apply -f configmap.yaml
-$ kunectl create -f configmap.yaml
-$ kunectl delete -f configmap.yaml
+$ kubectl apply -f configmap.yaml
+$ kubectl create -f configmap.yaml
+$ kubectl delete -f configmap.yaml
 $ kubectl get configmap
 $ kubectl describe configmap ${configmap}
 $ kubectl delete configmap ${configmap}
 ```
 # replicaset
 ```
-$ kunectl get replicatset
+$ kubectl get replicatset
 ```
