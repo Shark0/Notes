@@ -15,8 +15,11 @@
 * [Mysql](https://docs.microsoft.com/zh-tw/azure/mysql/)
 * [Redis](https://docs.microsoft.com/zh-tw/azure/azure-cache-for-redis/)
 
-## Virtual Machine
+## [Virtual Machine](https://docs.microsoft.com/zh-tw/azure/virtual-machines/)
 * Windows
 * Linux
-## AKE
 
+## [AKE](https://docs.microsoft.com/zh-tw/azure/aks/)
+
+## [Virtual Network](https://docs.microsoft.com/zh-tw/azure/virtual-network/)
+* Security Group
