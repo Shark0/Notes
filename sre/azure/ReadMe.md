@@ -46,6 +46,14 @@
 ## AKE
 Azure K8s服務，讓你建置集群，以及在上面部署專案
 * [官方文件](https://docs.microsoft.com/zh-tw/azure/aks/)
+* [CI/CD](https://docs.microsoft.com/zh-tw/azure/virtual-machines/linux/tutorial-build-deploy-azure-pipelines?tabs=java)
+
+## Pipeline
+自動化部屬在開發流程中是蠻重要的一環，因為人工上版非常耗人力及時間，並有人為操作錯誤的風險。
+雖然有學習難度，但這種服務通常只需要配置過一遍就可以用很久。
+* [官方文件](https://docs.microsoft.com/zh-tw/azure/devops/pipelines/?view=azure-devops)
+* [Virtual Machine](https://docs.microsoft.com/zh-tw/azure/devops/pipelines/ecosystems/deploy-linux-vm?view=azure-devops&tabs=java)
+* [AKS](https://docs.microsoft.com/zh-tw/azure/devops/pipelines/ecosystems/kubernetes/deploy?view=azure-devops)
 
 ## Virtual Network
 網路設定很重要的一環，其中Security Group不同服務開放的PORT以及對像
@@ -55,6 +63,8 @@ Azure K8s服務，讓你建置集群，以及在上面部署專案
 ## 監控
 監控上述服務資源負載
 * [官方文件](https://docs.microsoft.com/zh-tw/azure/azure-monitor/)
+* [YT VM教學](https://www.youtube.com/watch?v=8gwdB_sCwEw)
+* [YT AKS教學](https://www.youtube.com/watch?v=XEdwGvS2AwA)
 
 ## ARM範本
 將一個資源群組裡需要的服務寫在一個腳本裡，需要的時候一次建立出全部的服務
