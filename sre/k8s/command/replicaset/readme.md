@@ -1,0 +1,4 @@
+## replicaset
+```
+$ kubectl get replicatset
+```

@@ -1,0 +1,5 @@
+# node
+
+```
+$ kubectl get nodes
+```
