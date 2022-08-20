@@ -9,6 +9,8 @@
     * 在gitlab專案裝設定repository帳號(REGISTRY_USER) / 密碼(REGISTRY_PASSWORD)的project variable
   * 發佈image
     * 在gitlab專案設定deploy server的ssh key(SSH_KEY)
+    * 撰寫ssh command
+
 ### .gitlab-ci.yml 範例
 ```
 variables:
