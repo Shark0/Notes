@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mysql:
+    image: mysql
+    container_name: practice_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "//d/Shark/Practice/Docker/Volume/MySql:/var/lib/mysql"
+  web_application:
+    image: practice_springboot
+    container_name: practice_springboot
+    ports:
+      - "18080:8080"
+    depends_on:
+      - mysql
