@@ -40,3 +40,35 @@ select * from information_schema.INNODB_LOCK_waits;
 ```
 select concat('KILL ',id,';') from information_schema.processlist p inner join information_schema.INNODB_TRX x on p.id=x.trx_mysql_thread_id where db='test';
 ```
+
+## 效能優化
+### Doc
+* https://xie.infoq.cn/article/a274e214af9b43f77119b1d90
+* https://www.cnblogs.com/Sol-wang/p/17076128.html
+* https://blog.csdn.net/eagle89/article/details/128429971
+
+### Config
+/etc/my.inf
+* max_connections=16364
+* thread_cache_size=1024
+* innodb_buffer_pool_size=16G
+* innodb_buffer_pool_instances=16
+* innodb_read_io_threads=64
+* innodb_write_io_threads=128
+* key_buffer_size=1G
+* innodb_io_capacity=1000
+* innodb_io_capacity_max=4000
+* innodb_redo_log_capacity=1G
+* open_files_limit=8192
+* table_open_cache=8192
+* table_open_cache_instances=32
+* innodb_flush_log_at_trx_commit=2
+* sync_binlog=0
+* read_buffer_size=1G
+* join_buffer_size=1G
+* sort_buffer_size=1G
+* max_allowed_packet=16M
+* net_buffer_length=32M
+* innodb_log_file_size=1G
+* innodb_log_buffer_size=1G
+* max_allow_packet=1G
