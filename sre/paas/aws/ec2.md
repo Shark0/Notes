@@ -1,4 +1,5 @@
 # EC2
+![image](./image/EC2.png)
 
 ## Instance
 虛擬機，有不同價錢方案，每個類型有不同的CPU、Memory、網路效能。

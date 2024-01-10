@@ -1,5 +1,5 @@
 # Network
-![image info](./image/VPC.png)
+![image](./image/VPC.png)
 
 ## VPC
 管理一個Region中各Zone的Instance虛擬網路設定，每個VPC有自己的CIDR Block，像是10.0.0.0/16
