@@ -12,5 +12,3 @@ services:
     container_name: practice_springboot
     ports:
       - "18080:8080"
-    depends_on:
-      - mysql

@@ -36,6 +36,8 @@ select * from information_schema.INNODB_TRX;
 ```
 select * from information_schema.INNODB_LOCK_waits;
 ```
+這裡要看trx_tables_in_use，盡量保持1
+
 * 生成砍掉事務線程指令
 ```
 select concat('KILL ',id,';') from information_schema.processlist p inner join information_schema.INNODB_TRX x on p.id=x.trx_mysql_thread_id where db='test';
