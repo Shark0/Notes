@@ -17,7 +17,7 @@
 * AZURE - IAM
 
 ## Network
-* [AWS - VPC](./aws/vpc.md)
+* [AWS - VPC](aws/service/vpc.md)
 * GCP
 * AZURE
 

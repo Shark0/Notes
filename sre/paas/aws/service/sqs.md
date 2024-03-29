@@ -1,0 +1,2 @@
+# SQS
+AWS提供的Queue Service，每個message最大256B，有分FIFO跟Standard兩種，Message有所謂的Invisibility，用完要刪除。
