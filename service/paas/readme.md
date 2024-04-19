@@ -2,8 +2,8 @@
 這篇筆記是以本人Springboot後端工程師經驗來思考若用AWS、GCP、AZURE有哪些方面要顧慮
 
 * [AWS](aws/readme.md)
-* GCP
-* AZURE
+* [GCP](gcp/readme.md)
+* [AZURE](azure/readme.md)
 
 ## Service
 ### Organization

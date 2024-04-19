@@ -1,4 +1,4 @@
-#High Concurrency
+# High Concurrency
 最近處理高併發連線請求，把我處理碰到的技術克服點的心得大概寫寫，有興趣的人就看看
 
 ## Sql Service
