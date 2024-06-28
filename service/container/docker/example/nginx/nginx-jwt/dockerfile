@@ -1,0 +1,5 @@
+FROM openresty/openresty
+
+RUN apt-get update -y \
+&&	apt-get install openresty-opm -y \
+&&  opm get SkyLothar/lua-resty-jwt

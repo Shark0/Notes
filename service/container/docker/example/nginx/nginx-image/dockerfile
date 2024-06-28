@@ -1,0 +1,5 @@
+FROM nginx
+
+ADD ./html/index.html /etc/nginx/html/index.html
+ADD ./html/person.png /etc/nginx/html/person.png
+ADD ./config/nginx.conf /etc/nginx/nginx.conf

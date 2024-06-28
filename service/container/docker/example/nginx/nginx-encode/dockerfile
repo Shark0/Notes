@@ -1,0 +1,8 @@
+FROM openresty/openresty:alpine-fat
+
+RUN opm get SkyLothar/lua-resty-jwt
+
+ADD ./html/index.html /usr/local/openresty/nginx/html/index.html
+ADD ./html/person.png /usr/local/openresty/nginx/html/person.png
+ADD ./html/user.json /usr/local/openresty/nginx/html/user.json
+ADD ./config/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf

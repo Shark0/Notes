@@ -1,0 +1,23 @@
+{
+  "userId": 21601,
+  "userName": "edith+rm2",
+  "userCode": "edith+rm2",
+  "email": "wayne.su+rm@shoalter.com",
+  "roleId": 378,
+  "roleCode": "RM",
+  "roleName": "RM",
+  "remark": "RM",
+  "roleType": "S",
+  "buCodes":
+  [
+    "HKTV",
+    "HKTVEXPRESS",
+    "HKTVFOOD",
+    "HKTVPAY"
+  ],
+  "platformCodes":
+  [
+    "HKTV"
+  ],
+  "systemCode": "mms"
+}
