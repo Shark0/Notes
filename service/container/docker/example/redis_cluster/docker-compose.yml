@@ -1,0 +1,51 @@
+version: '3'
+services:
+  redis1:
+    image: redis:latest
+    container_name: redis1
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - ./redis1.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+    networks:
+      - redis-network
+  redis2:
+    image: redis:latest
+    container_name: redis2
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - ./redis2.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6380:6380"
+    networks:
+      - redis-network
+  redis3:
+    image: redis:latest
+    container_name: redis3
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - ./redis3.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6381:6381"
+    networks:
+      - redis-network
+  redis-cluster-setup:
+    image: redis:latest
+    container_name: redis-cluster
+    depends_on:
+      - redis1
+      - redis2
+      - redis3
+    entrypoint: >
+      sh -c "
+        until redis-cli -h redis1 -p 6379 ping; do sleep 10; done;
+        until redis-cli -h redis2 -p 6380 ping; do sleep 10; done;
+        until redis-cli -h redis3 -p 6381 ping; do sleep 10; done;
+        echo 'yes' | redis-cli --cluster create redis1:6379 redis2:6380 redis3:6381 --cluster-replicas 0 
+      "
+    networks:
+      - redis-network
+
+networks:
+  redis-network:
