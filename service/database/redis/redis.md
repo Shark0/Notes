@@ -1,5 +1,13 @@
 # Redis
 
+## Introduce
+
+## Data Structure
+* Key - Value
+* Hash
+* List
+* Set
+
 ## Redis Cli
 * install redis-cli
 * input command

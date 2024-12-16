@@ -3,12 +3,22 @@
 * [Mysql](mysql/readme.md)
 * PostgreSQL
 
-## NoSql
-* Elasticsearch
-* Mongo: Dictionary結構
-* Cassandra: Column結構
-* Scylla: Cassandra C++ 重購
+## Key - Value
+* [Redis](redis/redis.md)
+
+## Document
+* Mongo
+
+## Column
+* Cassandra
+* Scylla
+* HBase
+
+## Graph
+* Neo4j
 
 ## Cache
-* [Redis](redis/redis.md)
 * [AWS Elasticache](../paas/aws/service/elasticache.md)
+
+## Search
+* Elasticsearch
