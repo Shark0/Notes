@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shark-rockstar
+  namespace: poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shark-rockstar
+  template:
+    metadata:
+      labels:
+        app: shark-rockstar
+    spec:
+      containers:
+        - name: shark-rockstar
+          image: starrocks/allin1-ubuntu:latest
+          ports:
+            - containerPort: 9030
+            - containerPort: 8030
+            - containerPort: 8040

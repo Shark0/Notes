@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shark-rockstar-service
+spec:
+  selector:
+    app: shark-rockstar
+  ports:
+    - protocol: TCP
+      port: 9030
+      targetPort: 9030
+  type: NodePort
