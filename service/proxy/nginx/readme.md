@@ -1,4 +1,17 @@
 # Nginx
+
+## Docker
+### Prometheus
+支援Prometheus的版本
+#### Build Nginx for Prometheus Image
+```
+docker build -t nginx_prometheus . --no-cache
+```
+#### Run Docker for Prometheus
+```
+docker run -d -p 20080:80 -p 18080:8080 --name=prometheus_nginx nginx_prometheus 
+```
+
 ## CORS
 最近在架環境碰到CORS，看了這篇文章終於弄到有點概念，簡單講就是Server決定好非簡單請求的Client限制，如果Client沒乖乖遵守就會出現CORS問題。
 https://shubo.io/what-is-cors/
