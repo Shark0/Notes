@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temp-mysql
+  namespace: poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: temp-mysql
+  template:
+    metadata:
+      labels:
+        app: temp-mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root

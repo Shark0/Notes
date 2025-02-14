@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temp-prometheus
+  namespace: poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: temp-prometheus
+  template:
+    metadata:
+      labels:
+        app: temp-prometheus
+    spec:
+      containers:
+        - name: poc-message
+          image: prom/prometheus:latest
+          ports:
+            - containerPort: 9090
+              protocol: TCP
