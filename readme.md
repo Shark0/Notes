@@ -7,3 +7,4 @@
 
 ## 其他
 * [book](book/readme.md)
+* [math](./math/readme.md)
