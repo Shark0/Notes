@@ -3,10 +3,10 @@
 工具: https://claude.ai/
 
 ## 實作
+拿尚未實作的Affiliate Store的Rebate Setting來實驗
 
 ### 第一步
-
-可由讓PM敘述專案需求Prompt，來產出一個範例跟UI、RD講解需求，我拿公司要開發的Affiliate Store Rebate Setting來實驗
+在PM匯集User需求後，寫下相關User Story，並把User Story的相關頁面特徵與操作寫成條列式的Prompt，如下方的1 - 4 點，透過Vibe Coding來產出一個範例跟UI + RD講解需求。
 ```
 我想建置一個Rebate Setting管理頁面
 
@@ -374,7 +374,11 @@ export default RebateSettingManagement;
 
 ### 第二步
 
-RD定義Data Model跟Function Interface，多定義第五點跟第六點
+PM提供的Prompt產出的代碼基本無法放在專案，原因就是Prompt產出的範例資料都是假資料，前端工程師就算複製貼上也要在邏輯代碼方面做出大量修改，因此這邊建議RD在PM的Prompt上進一步加入兩點
+
+* Data Model的定義(下方第五點)，可由前後端工程師討論或產生
+* Function Interface的定義(下方第六點)，讓AI根據定義好的Function來實做邏輯，之後要把假資料的代碼轉成跟API串接也能方便知道修改目標在哪
+
 ```
 我想建置一個Rebate Setting管理頁面
 
@@ -410,8 +414,6 @@ function updateRebateSetting(rebateSetting: RebateSetting)//更新 Reabate Setti
 ```
 
 Vibe Coding建立出來的範例: https://claude.ai/public/artifacts/2acac1b6-4ae6-491a-9ebb-467f285c5a57
-
-若之後後端開發出API，前端只要替換將資料處理有關的Function替換成API代碼的就好，這邊我是融合MVVM + ISP的概念。
 
 #### 代碼
 ```
@@ -864,11 +866,13 @@ const RebateSettingManagement = () => {
 export default RebateSettingManagement;
 ```
 
-
-
 ### 第三步
 
-要求MVVM，解耦Model、View、ViewModel，寫在第七點
+接下來就是要怎麼方便將範例UI替換成公司UIUX團隊設計? 若有能事先定義好Model並用MVVM開發，把View的代碼竟可能的做到獨立，就能在替換UI後花最少的工將View綁定Model，解耦前端跟UI。
+
+因此我們在額外要求要用MVVM來開發(下方第七點)
+
+
 ```
 1. 頁面一進去可以看到Rebate Setting列表
 
@@ -904,8 +908,6 @@ function updateRebateSetting(rebateSetting: RebateSetting)//更新 Reabate Setti
 
 Vibe Coding建立出來的範例: https://claude.ai/public/artifacts/c6a16844-0139-4404-b4c3-9eaa1ce1ade2
 ```
-
-若有能事先定義好Model並用MVVM開發，就能直接將範例的UI做替換，並用最少的工來將View綁定Model
 
 #### 代碼
 ```
