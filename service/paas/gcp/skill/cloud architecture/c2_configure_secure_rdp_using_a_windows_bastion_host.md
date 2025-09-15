@@ -1,6 +1,6 @@
 # Task 1. Create the VPC network
 
-### 【GCP Cloud Shell (gcloud) 作法】
+### 【GCP Cloud Shell 作法】
 
 1.  **建立自訂模式的 VPC 網路 `securenetwork`：**
     ```bash
@@ -25,7 +25,7 @@
         --target-tags=rdp-bastion
     ```
 
-### 【GCP Console (Dashboard) 作法】
+### 【GCP Console 作法】
 
 1.  **建立 VPC 網路：**
     *   前往 GCP Console > **VPC network** > **VPC networks**。
@@ -56,7 +56,7 @@
 ---
 # Task 2. Deploy your Windows instances and configure user passwords
 
-### 【GCP Cloud Shell (gcloud) 作法】
+### 【GCP Cloud Shell 作法】
 
 (請將 `[ZONE]` 替換成您要使用的可用區，例如 `us-central1-a`)
 
@@ -94,7 +94,7 @@
     ```
     *注意：執行此指令後，gcloud 會顯示一組臨時密碼，請務必將其複製並妥善保存。*
 
-### 【GCP Console (Dashboard) 作法】
+### 【GCP Console 作法】
 
 1.  **部署安全主機 `vm-securehost`：**
     *   前往 GCP Console > **Compute Engine** > **VM instances** > **CREATE INSTANCE**。
