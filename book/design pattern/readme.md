@@ -3,19 +3,19 @@
 ## 創建型模式 (Creational Patterns)
 這些模式專注於物件的創建機制，提升靈活性和可複用性。
 
-### 單例模式 (Singleton)  
+### [單例模式 (Singleton)](./singleton.md)
 確保一個類別只有一個實例，並提供全局訪問點。  
 示例：全局配置管理器。
 
-### 工廠方法模式 (Factory Method)  
+### [工廠方法模式 (Factory Method)](./factory.md)  
 定義一個創建物件的接口，讓子類決定實例化哪個類別。  
 示例：創建不同類型的日誌記錄器。
 
-### 抽象工廠模式 (Abstract Factory)  
+### [抽象工廠模式 (Abstract Factory)](./abstract_factory.md)  
 提供一個接口來創建一組相關或相互依賴的物件，無需指定具體Stuart 模式。  
 示例：不同操作系統的UI工具包創建按鈕、窗口等。
 
-### 建造者模式 (Builder)  
+### [建造者模式 (Builder)](./builder.md)  
 將複雜物件的構建過程與其表示分離，逐步構建物件。  
 示例：構建複雜的文檔或配置物件。
 
@@ -28,7 +28,7 @@
 ## 結構型模式 (Structural Patterns)
 這些模式關注類別和物件的組合，形成更大的結構。
 
-### 適配器模式 (Adapter)  
+### [適配器模式 (Adapter)](./adapter.md)  
 將一個類別的接口轉換為客戶端期望的另一個接口。  
 示例：舊系統接口適配到新系統。
 
@@ -61,7 +61,7 @@
 ## 行為型模式 (Behavioral Patterns)
 這些模式關注物件之間的通信和職責分配。
 
-### 責任鏈模式 (Chain of Responsibility)  
+### [責任鏈模式 (Chain of Responsibility)](./chain_of_responsibility.md)  
 將請求沿處理者鏈傳遞，直到被處理。  
 示例：事件處理鏈、HTTP請求中間件。
 
@@ -85,19 +85,19 @@
 在不破壞封裝的情況下捕獲物件的內部狀態，以便後續恢復。  
 示例：文字編輯器的撤銷功能。
 
-### 觀察者模式 (Observer)  
+### [觀察者模式 (Observer)](./observer.md)
 定義物件間一對多的依賴關係，當狀態改變時通知依賴物件。  
 示例：發布-訂閱系統。
 
-### 狀態模式 (State)  
+### [狀態模式 (State)](./state.md)
 允許物件在其內部狀態改變時改變行為。  
 示例：TCP連線的狀態轉換。
 
-### 策略模式 (Strategy)  
+### [策略模式 (Strategy)](./strategy.md)
 定義一系列演算法，封裝每個演算法，並使它們可互換。  
 示例：不同排序演算法的選擇。
 
-### 模板方法模式 (Template Method)  
+### [模板方法模式 (Template Method)](./template.md)
 定義演算法骨架，將某些步驟延遲到子類實現。  
 示例：資料處理流程的通用模板。
 
