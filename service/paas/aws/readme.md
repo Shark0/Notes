@@ -1,9 +1,153 @@
 # AWS
-觀看這篇筆及可以搭配[大話AWS雲端架構](https://www.tenlong.com.tw/products/9789864348022?list_name=srh)
-，該書是講解概念，而這篇筆記則是在Youtube找出相關實作教學影片，極度建議把書看完一遍再看教學影片，
-如果不看書的話也可以看此[Youtube](https://www.youtube.com/watch?v=Z3SYDTMP3ME&t=3s) 來理解AWS提供的各服務在應用情境裡扮演的腳色。
 
-下面Youtube實作教學的排序是按照個人經驗中服務的重要度以及常用程度來排序。
+## Operational Excellence（卓越營運）
+重點：可觀測性、自動化、變更管理、持續改善
+* AWS CloudWatch
+  * Metrics / Logs / Alarms 
+  * 監控系統健康狀態、設定告警（SAA 常考）
+* AWS CloudTrail
+  * 記錄誰在什麼時間對 AWS 做了什麼操作 
+  * 稽核、追蹤錯誤操作
+* AWS Config
+  * 資源設定是否符合規範（如 S3 是否公開）
+  * 偵測 drift（偏離設定）
+* AWS Systems Manager
+  * 自動化維運（Patch、Run Command、Session Manager）
+  * 不用 SSH 就能管 EC2
+* AWS CloudFormation / CDK
+  * Infrastructure as Code 
+  * 可重複部署、減少人為錯誤
+* AWS Trusted Advisor
+  * 提供符合最佳實踐的自動化檢查與建議。
+* AWS OpsWorks
+* AWS X-Ray
+* AWS CodePipeline
+* CodeBuild
+* CodeDeploy
+* CodeCommit
+* EventBridge
+* Step Functions
+* Service Catalog
+
+## Security（安全性）
+重點：身份、資料、網路、威脅防護
+* AWS IAM
+  * 使用者、角色、Policy 
+  * Least Privilege 原則
+* AWS KMS 
+  * 金鑰管理（EBS / S3 / RDS 加密） 
+  * Server-side encryption
+* AWS Secrets Manager / Parameter Store 
+  * 管理 DB password / API key 
+  * 比硬寫在程式碼安全
+* AWS WAF 
+  * Web 攻擊防護（SQL Injection、XSS） 
+* AWS Shield
+  * DDoS 防護（Standard / Advanced）
+* Amazon GuardDuty 
+  * 威脅偵測（異常流量、可疑行為）
+* AWS Security Hub
+* Amazon Inspector
+* AWS Cognito
+* VPC (NACL/SG
+* AWS Certificate Manager (ACM)
+* AWS RAM 
+
+## Reliability（可靠性）
+重點：高可用、容錯、備份、災難復原
+* Amazon EC2 Auto Scaling 
+  * 自動補機器，避免單點故障
+* Elastic Load Balancing（ALB / NLB） 
+  * 分散流量、健康檢查
+* Amazon RDS (Multi-AZ)
+  * 自動 failover（SAA 必考）
+* Amazon S3 
+  * 11 個 9 的 durability 
+  * 天生高可靠
+* AWS Backup 
+  * 集中管理備份策略
+* Amazon Route 53 
+  * Health Check + Failover routing
+* Amazon Aurora Global
+* Amazon EFS
+* AWS Backup
+* Amazon SQS
+* Amazon SNS
+* Amazon ElastiCache (Multi-AZ)
+
+## Performance Efficiency（效能效率）
+重點：選對服務、自動擴展、Managed Service
+* Amazon EC2
+  * Compute / Memory / Storage optimized
+* AWS Lambda 
+  * 無伺服器、事件驅動 
+  * 間歇性流量超適合
+* Amazon ECS
+* Amazon EKS
+* Amazon Fargate
+* Amazon S3 Transfer Acceleration / Intelligent-Tiering
+* Amazon DynamoDB 
+  * 高吞吐、低延遲
+  * Auto Scaling / On-Demand
+* Amazon DynamoDB Accelerator
+* Amazon ElastiCache（Redis / Memcached） 
+  * 快取降低 DB 壓力
+* Amazon CloudFront 
+  * CDN，降低 latency
+* AWS Compute Optimizer
+* AWS Global Accelerator
+* AWS Nitro Enclaves
+
+# Cost Optimization（成本最佳化）
+重點：付多少用多少、避免浪費
+* AWS Cost Explorer 
+  * 分析成本趨勢
+* AWS Budgets 
+  * 成本告警（超支通知）
+* EC2 Pricing Models 
+  * On-Demand / Reserved / Spot（SAA 愛考 Spot）
+* S3 Storage Classes 
+  * Standard / IA / Glacier / Deep Archive
+* AWS Compute Optimizer 
+  * 建議你該用什麼 instance
+* Savings Plans / Reserved Instances (RI)
+  * 承諾長期使用以換取大幅折扣
+* Spot Instances
+  * 利用 AWS 閒置產能，最高可節省 90% 的運算成本
+* S3 Intelligent-Tiering
+  * 自動根據數據訪問頻率調整儲存層級以節省費用
+* Glacier
+* One Zone-IA
+* AWS Cost Anomaly Detection
+* Pay-Per-Use
+  * EC2 Auto Scaling
+  * Spot Fleet
+  * Lambda
+  * Fargate
+* AWS Compute Optimizer
+
+
+# Sustainability (永續發展)
+重點：減少浪費、提升資源使用率（SAA 新但會考概念）
+* AWS Region 選擇（低碳地區）
+* AWS Ec2 / Lambda / Fargate / Step Functions
+  * Serverless
+  * 高資源利用率
+* Amazon EC2 Auto Scaling
+  * 用多少開多少 
+* Amazon EC2 Spot Instances
+* Graviton Instances 
+  * 更省電、更高效能
+* S3 Lifecycle 
+  * 自動轉低碳、低成本儲存層
+* Amazon S3 (One Zone-IA, Glacier)
+* AWS Customer Carbon Footprint Tool
+  * 追蹤、衡量並預測你使用 AWS 服務產生的碳排放
+* Serverless 服務 (Lambda, Fargate)
+  * 透過共享資源減少硬體閒置，進而減少環境衝擊
+* Managed Services (RDS, DynamoDB)
+  * 由 AWS 優化基礎設施運作效率，而非用戶自行維護低效的虛擬機
+* AWS Compute Optimizer
 
 ## [EC2](https://www.youtube.com/watch?v=8bIW7qlldLg)
 * Overview of the Amazon Elastic Compute Cloud (EC2)
