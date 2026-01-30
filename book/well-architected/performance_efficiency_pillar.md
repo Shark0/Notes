@@ -10,20 +10,20 @@ The performance efficiency pillar focuses on the efficient use of computing reso
 * Experiment more often.
 * Consider mechanical sympathy.
 
-# Performance efficiency design principles
+## Performance efficiency design principles
 * Democratize advanced technologies
 * Go global in minutes
 * Use serverless architectures
 * Experiment more often.
 * Consider mechanical sympathy.
 
-# Performance efficiency best practice areas
+## Performance efficiency best practice areas
 * Selection
 * Review 
 * Monitoring
 * Trade-offs
 
-# Performance architecture selection
+## Performance architecture selection
 * Understand the available services and resources
 * Define a process for architectural choices
 * Factor cost requirements into decisions
@@ -32,7 +32,7 @@ The performance efficiency pillar focuses on the efficient use of computing reso
 * Benchmark existing workloads.
 * Load test your workload.
 
-# Compute architecture selection
+## Compute architecture selection
 * Understand available compute configuration options
 * Evaluate available compute options
 * Collect compute-related metrics
@@ -40,19 +40,19 @@ The performance efficiency pillar focuses on the efficient use of computing reso
 * User available elasticity of resources
 * Continually evaluate compute needs based on metrics.
 
-# Storage architecture selection
+## Storage architecture selection
 * Understand storage characteristics and requirements
 * Make decisions based on access patterns and metrics
 * Evaluate available configuration options
 
-# Database architecture selection
+## Database architecture selection
 * Understand data characteristics
 * Evaluate the available options
 * Collect and record database performance metrics
 * Choose data storage based on access patterns
 * Optimize data storage based on access patterns and metrics
 
-# Network architecture selection
+## Network architecture selection
 * Understand how networking impacts performance
 * Evaluate available networking features
 * Choose appropriately sized dedicated connectivity or VPN for hybrid workloads.
@@ -62,12 +62,12 @@ The performance efficiency pillar focuses on the efficient use of computing reso
 * Optimize network configuration based on metrics
 * 
 
-# Evolve your workload to take advantage of new releases
+## Evolve your workload to take advantage of new releases
 * Stay up-to-date on new resources and services
 * Define a process to improve workload performance
 * Evolve workload performance over time
 
-# Monitor resources to ensure expected performance
+## Monitor resources to ensure expected performance
 * Record performance-related metrics
 * Analyze metrics when events or incidents occur
 * Establish KPIs to measure workload performance
@@ -75,7 +75,7 @@ The performance efficiency pillar focuses on the efficient use of computing reso
 * Review metrics at regular intervals
 * Monitor and alarm practively
 
-# Using trade-offs to improve performance
+## Using trade-offs to improve performance
 * Understand areas where performance is most critical
 * Learn about design patterns and services
 * Identify how trad-offs impact customers and efficiency
